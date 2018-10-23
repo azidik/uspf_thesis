@@ -8,7 +8,8 @@
 <!--===============================================================================================-->  
     <link rel="icon" type="image/x-icon" href="public/images/logo-tesda.jpg">
 <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="public/login/vendor/bootstrap/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" type="text/css" href="public/admin/css/material-dashboard.min.css"> -->
+    <link rel="stylesheet" type="text/css" href="public/admin/css/material-dashboard.css">
 <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="public/login/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
 <!--===============================================================================================-->
@@ -18,11 +19,13 @@
 <!--===============================================================================================-->
     <link href="public/admin/demo/demo.css" rel="stylesheet" />
 <!--===============================================================================================-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 
 </head>
 <body class="">
   <div class="wrapper ">
-    <div class="sidebar" data-color="azure" data-background-color="white" data-image="../assets/img/sidebar-1.jpg">
+    <div class="sidebar" data-color="azure" data-background-color="white" data-image="public/images/sidebar-1.jpg">
       <!--
         Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
 
@@ -109,144 +112,74 @@
         </div>
       </nav>
       <!-- End Navbar -->
+
+
       <div class="content">
         <div class="container-fluid">
           <div class="row">
             <div class="col-md-12">
-              <div class="card">
+              <div class="card card-nav-tabs">
                 <div class="card-header card-header-info">
-                  <h4 class="card-title">Trainor's/Assessor's Profile</h4>
-                  <p class="card-category">Technical Education and Skills Development Authority</p>
+                    <h4 class="card-title">Trainor's/Assessor's Profile</h4>
+                    <p class="card-category">Technical Education and Skills Development Authority</p>
+                    <div class="nav-tabs-navigation">
+                        <div class="nav-tabs-wrapper">
+                            <ul class="nav nav-tabs" data-tabs="tabs">
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="#page1-2" data-toggle="tab">page 1 - 2</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#page3" data-toggle="tab">page 3</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#page4" data-toggle="tab">page 4</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#page5" data-toggle="tab">page 5</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#page6" data-toggle="tab">page 6</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#page7" data-toggle="tab">page 7</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#page8" data-toggle="tab">page 8</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#page9" data-toggle="tab">page 9</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#page10" data-toggle="tab">page 10</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#page11" data-toggle="tab">page 11</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
                 <div class="card-body">
-                  <form>
-                    <h3 style="color: red;">1. To be accomplished by TESDA</h3>
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">1.1 NMIS Manpower Code</label>
-                          <input type="number" class="form-control" >
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">1.2 NMIS Entry Date</label>
-                          <input type="date" class="form-control">
-                        </div>
-                      </div>
+                    <div class="tab-content">
+                      <?php 
+                        include '/includes/page1-2.php';
+                        include '/includes/page3.php';
+                        include '/includes/page4.php';
+                        include '/includes/page5.php';
+                        include '/includes/page6.php';
+                        include '/includes/page7.php';
+                        include '/includes/page8.php';
+                        include '/includes/page9.php';
+                        include '/includes/page10.php';
+                        include '/includes/page11.php';
+                       ?>
                     </div>
-
-                    <h3 style="color: red;">2. Manpower Profile</h3>
-                    <div class="row">
-                      <div class="col-md-4">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">2.1 Last Name</label>
-                          <input type="text" class="form-control">
-                        </div>
-                      </div>
-                      <div class="col-md-4">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">2.1 First Name</label>
-                          <input type="text" class="form-control">
-                        </div>
-                      </div>
-                      <div class="col-md-4">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">2.1 Middle Name</label>
-                          <input type="text" class="form-control">
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-md-3">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">2.2 Number, Street</label>
-                          <input type="text" class="form-control">
-                        </div>
-                      </div>
-                      <div class="col-md-3">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">2.2 Barangay</label>
-                          <input type="text" class="form-control">
-                        </div>
-                      </div>
-                      <div class="col-md-3">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">2.2 District</label>
-                          <input type="text" class="form-control">
-                        </div>
-                      </div>
-                      <div class="col-md-3">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">2.3 City</label>
-                          <input type="text" class="form-control">
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="row">
-                      <div class="col-md-3">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">2.2 Province</label>
-                          <input type="text" class="form-control">
-                        </div>
-                      </div>
-                      <div class="col-md-3">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">2.2 Region</label>
-                          <input type="text" class="form-control">
-                        </div>
-                      </div>
-                      <div class="col-md-3">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">2.2 Zip Code</label>
-                          <input type="text" class="form-control">
-                        </div>
-                      </div>
-                      <div class="col-md-3">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">2.2 P.O Box No.</label>
-                          <input type="text" class="form-control">
-                        </div>
-                      </div>
-                    </div>
-
-                    <h3 style="color: red;">3. Personal Information</h3>
-
-                    
-                    <div class="row">
-                      <div class="col-md-4">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">3.1 Birthdate</label>
-                          <input type="text" class="form-control">
-                        </div>
-                      </div>
-                      <div class="col-md-4">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">3.6 Weight</label>
-                          <input type="text" class="form-control">
-                        </div>
-                      </div>
-                      <div class="col-md-4">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">3.11 Distinguish Remark</label>
-                          <input type="text" class="form-control">
-                        </div>
-                      </div>
-                    </div>
-
-                    <hr>
-                    <button type="submit" class="btn btn-primary pull-right">Update Profile</button>
-                    <div class="clearfix"></div>
-                  </form>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
 
 
 <!--===============================================================================================-->  
@@ -255,8 +188,6 @@
 <!--===============================================================================================-->
     <script src="public/admin/js/core/bootstrap-material-design.min.js" type="text/javascript"></script>
     <script src="public/admin/js/plugins/perfect-scrollbar.jquery.min.js"></script>
-<!--===============================================================================================-->
-    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
 <!--===============================================================================================-->
     <script src="public/admin/js/plugins/chartist.min.js"></script>
     <script src="public/admin/js/plugins/bootstrap-notify.js"></script>
