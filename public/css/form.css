@@ -1,0 +1,73 @@
+body {
+    width: 100%;  
+    min-height: 100vh;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background: #9053c7;
+    background: -webkit-linear-gradient(-135deg, #4158d0, #9999FF);
+    background: -o-linear-gradient(-135deg, #4158d0, #9999FF);
+    background: -moz-linear-gradient(-135deg, #4158d0, #9999FF);
+    background: linear-gradient(-135deg, #4158d0, #9999FF);
+}
+
+.card {
+    margin-top: 1em;
+}
+
+/* IMG displaying */
+.person-card {
+    padding-top: 5em;
+}
+.person-card .card-title{
+    text-align: center;
+}
+.person-card .person-img{
+    width: 10em;
+    position: absolute;
+    top: -5em;
+    left: 50%;
+    margin-left: -5em;
+    border-radius: 100%;
+    overflow: hidden;
+    background-color: white;
+}
+
+.container{
+    margin-bottom: 20px;
+}
+
+h2{
+    color: red;
+}
+
+table{
+    width: 100%;
+   margin-top: 10px;
+}
+
+
+table td th{
+    padding: 0px 10px;
+}
+
+
+.text-line {
+        background-color: transparent;
+        color: gray;
+        outline: none;
+        outline-style: none;
+        outline-offset: 0;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom: solid #000 1px;
+        padding: 2px 12px;
+        margin: 0px;
+}
+
