@@ -290,33 +290,33 @@
                                   </div>
                                 </div>
                                 <div class="col-md-6">
-                                  <div class="form-check">
+                                  <div class="form-check form-check-radio">
                                       <label class="form-check-label">
-                                          <input class="form-check-input" type="checkbox" value="">
-                                          Probitionary
-                                          <span class="form-check-sign">
+                                          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" >
+                                          Probationary
+                                          <span class="circle">
                                               <span class="check"></span>
                                           </span>
                                       </label>
                                   </div>
-                                  <div class="form-check">
+                                  <div class="form-check form-check-radio">
                                       <label class="form-check-label">
-                                          <input class="form-check-input" type="checkbox" value="">
+                                          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" >
                                           Regular
-                                          <span class="form-check-sign">
+                                          <span class="circle">
                                               <span class="check"></span>
                                           </span>
                                       </label>
                                   </div>
-                                  <div class="form-check">
-                                      <label class="form-check-label">
-                                          <input class="form-check-input" type="checkbox" value="">
-                                          Permanent
-                                          <span class="form-check-sign">
-                                              <span class="check"></span>
-                                          </span>
-                                      </label>
-                                  </div>
+                                  <div class="form-check form-check-radio">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" >
+                                        Permanent
+                                        <span class="circle">
+                                            <span class="check"></span>
+                                        </span>
+                                    </label>
+                                </div>
                                 </div>
                               </div>
                             </div>

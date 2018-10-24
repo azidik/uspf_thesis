@@ -189,8 +189,11 @@
     <script src="public/admin/js/core/bootstrap-material-design.min.js" type="text/javascript"></script>
     <script src="public/admin/js/plugins/perfect-scrollbar.jquery.min.js"></script>
 <!--===============================================================================================-->
+    <script src="public/admin/js/editable.js"></script>
+<!--===============================================================================================-->
     <script src="public/admin/js/plugins/chartist.min.js"></script>
     <script src="public/admin/js/plugins/bootstrap-notify.js"></script>
+    <script src="public/admin/js/plugins/jquery.dataTables.min.js"></script>
     <script src="public/admin/js/material-dashboard.min.js?v=2.1.0" type="text/javascript"></script>
      <script>
     $(document).ready(function() {
