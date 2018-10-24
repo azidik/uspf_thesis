@@ -1,9 +1,10 @@
 <?php
 
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateProficiencyTable extends Migration
+class CreateDesignationsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,11 +13,14 @@ class CreateProficiencyTable extends Migration
      */
     public function up()
     {
-        Schema::create('proficiency', function (Blueprint $table) {
+        Schema::create('designations', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('code');
             $table->string('name');
+            $table->string('province');
+            $table->integer('region')->unsigned()->index();
             $table->timestamps();
+
+            $table->foreign('region')->references('id')->on('regions');
         });
     }
 
@@ -27,6 +31,6 @@ class CreateProficiencyTable extends Migration
      */
     public function down()
     {
-        Schema::drop('proficiency');
+        Schema::dropIfExists('user_designations');
     }
 }

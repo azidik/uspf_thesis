@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateProgramSectorTable extends Migration
+class CreateEmploymentTypesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,7 +12,7 @@ class CreateProgramSectorTable extends Migration
      */
     public function up()
     {
-        Schema::create('program_sector', function (Blueprint $table) {
+        Schema::create('employment_types', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
             $table->timestamps();
@@ -26,6 +26,6 @@ class CreateProgramSectorTable extends Migration
      */
     public function down()
     {
-        Schema::drop('program_sector');
+        Schema::drop('employment_types');
     }
 }

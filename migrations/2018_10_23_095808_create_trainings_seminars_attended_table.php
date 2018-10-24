@@ -29,9 +29,9 @@ class CreateTrainingsSeminarsAttendedTable extends Migration
 
             $table->foreign('trainor')->references('id')->on('trainors_info');
             $table->foreign('certificate_types')->references('id')->on('certificate_types');
-            $table->foreign('training_base')->references('id')->on('training_base');
-            $table->foreign('category')->references('id')->on('category');
-            $table->foreign('proficiency')->references('id')->on('proficiency');
+            $table->foreign('training_base')->references('id')->on('training_base_types');
+            $table->foreign('category')->references('id')->on('category_types');
+            $table->foreign('proficiency')->references('id')->on('proficiency_types');
         });
     }
 

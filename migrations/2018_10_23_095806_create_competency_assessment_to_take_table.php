@@ -27,9 +27,9 @@ class CreateCompetencyAssessmentToTakeTable extends Migration
             $table->timestamps();
 
             $table->foreign('trainor')->references('id')->on('trainors_info');
-            $table->foreign('training_program')->references('id')->on('training_program');
-            $table->foreign('program_sector')->references('id')->on('program_sector');
-            $table->foreign('client_type')->references('id')->on('client_type');
+            $table->foreign('training_program')->references('id')->on('training_program_types');
+            $table->foreign('program_sector')->references('id')->on('program_sector_types');
+            $table->foreign('client_type')->references('id')->on('client_types');
         });
     }
 

@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTrainingBaseTable extends Migration
+class CreateTrainingBaseTypesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,7 +12,7 @@ class CreateTrainingBaseTable extends Migration
      */
     public function up()
     {
-        Schema::create('training_base', function (Blueprint $table) {
+        Schema::create('training_base_types', function (Blueprint $table) {
             $table->increments('id');
             $table->string('code');
             $table->string('name');
@@ -27,6 +27,6 @@ class CreateTrainingBaseTable extends Migration
      */
     public function down()
     {
-        Schema::drop('training_base');
+        Schema::drop('training_base_types');
     }
 }
