@@ -17,16 +17,16 @@
                                     Add row
                             </button>
                             <div class="table-responsive">
-                                <table id="cap-table" class="table table-hover">
+                                <table id="cap-table" style="" class="table table-hover">
                                         <thead>
                                            <tr>
-                                               <th><h6 style="font-weight: bold;">10.1 Industry Sector</h6></th>
-                                               <th><h6 style="font-weight: bold;">10.2 Trade Area</h6></th>
-                                               <th><h6 style="font-weight: bold;">10.3 Occupation</h6></th>
-                                               <th><h6 style="font-weight: bold;">10.4 Classification Level</h6></th>
-                                               <th><h6 style="font-weight: bold;">10.5 Competency</h6></th>
-                                               <th><h6 style="font-weight: bold;">10.6 Specialization Description</h6></th>
-                                               <th><h6 style="font-weight: bold;">Action</h6></th>
+                                               <th style="100px !important;"><h6 style="font-weight: bold;">10.1 Industry Sector</h6></th>
+                                               <th style="100px !important;"><h6 style="font-weight: bold;">10.2 Trade Area</h6></th>
+                                               <th style="100px !important;"><h6 style="font-weight: bold;">10.3 Occupation</h6></th>
+                                               <th style="100px !important;"><h6 style="font-weight: bold;">10.4 Classification Level</h6></th>
+                                               <th style="100px !important;"><h6 style="font-weight: bold;">10.5 Competency</h6></th>
+                                               <th style="100px !important;"><h6 style="font-weight: bold;">10.6 Specialization Description</h6></th>
+                                               <th style="100px !important;"><h6 style="font-weight: bold;">Action</h6></th>
                                            </tr>
                                         </thead>
                                         <tbody id="cap-body">
@@ -61,3 +61,9 @@
                                 </table>
                             </div>
                         </div>
+
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
