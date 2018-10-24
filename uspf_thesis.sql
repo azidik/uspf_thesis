@@ -1,6 +1,6 @@
 /*
 SQLyog Ultimate v12.3.2 (64 bit)
-MySQL - 5.6.22-log : Database - uspf_thesis
+MySQL - 5.7.23-log : Database - uspf_thesis
 *********************************************************************
 */
 
@@ -12,15 +12,15 @@ MySQL - 5.6.22-log : Database - uspf_thesis
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-CREATE DATABASE /*!32312 IF NOT EXISTS*/`uspf_thesis` /*!40100 DEFAULT CHARACTER SET utf8 */;
+CREATE DATABASE /*!32312 IF NOT EXISTS*/`uspf_thesis` /*!40100 DEFAULT CHARACTER SET latin1 */;
 
 USE `uspf_thesis`;
 
-/*Table structure for table `tb_category` */
+/*Table structure for table `tb_category_types` */
 
-DROP TABLE IF EXISTS `tb_category`;
+DROP TABLE IF EXISTS `tb_category_types`;
 
-CREATE TABLE `tb_category` (
+CREATE TABLE `tb_category_types` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `code` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -29,7 +29,7 @@ CREATE TABLE `tb_category` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-/*Data for the table `tb_category` */
+/*Data for the table `tb_category_types` */
 
 /*Table structure for table `tb_certificate_types` */
 
@@ -46,11 +46,11 @@ CREATE TABLE `tb_certificate_types` (
 
 /*Data for the table `tb_certificate_types` */
 
-/*Table structure for table `tb_civil_status` */
+/*Table structure for table `tb_civil_statuses` */
 
-DROP TABLE IF EXISTS `tb_civil_status`;
+DROP TABLE IF EXISTS `tb_civil_statuses`;
 
-CREATE TABLE `tb_civil_status` (
+CREATE TABLE `tb_civil_statuses` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -58,13 +58,13 @@ CREATE TABLE `tb_civil_status` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-/*Data for the table `tb_civil_status` */
+/*Data for the table `tb_civil_statuses` */
 
-/*Table structure for table `tb_client_type` */
+/*Table structure for table `tb_client_types` */
 
-DROP TABLE IF EXISTS `tb_client_type`;
+DROP TABLE IF EXISTS `tb_client_types`;
 
-CREATE TABLE `tb_client_type` (
+CREATE TABLE `tb_client_types` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -72,7 +72,7 @@ CREATE TABLE `tb_client_type` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-/*Data for the table `tb_client_type` */
+/*Data for the table `tb_client_types` */
 
 /*Table structure for table `tb_competency_assessment_passed` */
 
@@ -119,34 +119,47 @@ CREATE TABLE `tb_competency_assessment_to_take_table` (
   KEY `competency_assessment_to_take_table_training_program_index` (`training_program`),
   KEY `competency_assessment_to_take_table_program_sector_index` (`program_sector`),
   KEY `competency_assessment_to_take_table_client_type_index` (`client_type`),
-  CONSTRAINT `competency_assessment_to_take_table_client_type_foreign` FOREIGN KEY (`client_type`) REFERENCES `tb_client_type` (`id`),
-  CONSTRAINT `competency_assessment_to_take_table_program_sector_foreign` FOREIGN KEY (`program_sector`) REFERENCES `tb_program_sector` (`id`),
-  CONSTRAINT `competency_assessment_to_take_table_training_program_foreign` FOREIGN KEY (`training_program`) REFERENCES `tb_training_program` (`id`),
+  CONSTRAINT `competency_assessment_to_take_table_client_type_foreign` FOREIGN KEY (`client_type`) REFERENCES `tb_client_types` (`id`),
+  CONSTRAINT `competency_assessment_to_take_table_program_sector_foreign` FOREIGN KEY (`program_sector`) REFERENCES `tb_program_sector_types` (`id`),
+  CONSTRAINT `competency_assessment_to_take_table_training_program_foreign` FOREIGN KEY (`training_program`) REFERENCES `tb_training_program_types` (`id`),
   CONSTRAINT `competency_assessment_to_take_table_trainor_foreign` FOREIGN KEY (`trainor`) REFERENCES `tb_trainors_info` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*Data for the table `tb_competency_assessment_to_take_table` */
 
-/*Table structure for table `tb_contact_nos` */
+/*Table structure for table `tb_contact` */
 
-DROP TABLE IF EXISTS `tb_contact_nos`;
+DROP TABLE IF EXISTS `tb_contact`;
 
-CREATE TABLE `tb_contact_nos` (
+CREATE TABLE `tb_contact` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `trainor` int(10) unsigned NOT NULL,
-  `tel` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `cell` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `fax` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `others` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `contact` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `contact_type` int(10) unsigned NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `contact_nos_trainor_index` (`trainor`),
-  CONSTRAINT `contact_nos_trainor_foreign` FOREIGN KEY (`trainor`) REFERENCES `tb_trainors_info` (`id`)
+  KEY `contact_trainor_index` (`trainor`),
+  KEY `contact_contact_type_index` (`contact_type`),
+  CONSTRAINT `contact_contact_type_foreign` FOREIGN KEY (`contact_type`) REFERENCES `tb_contact_types` (`id`),
+  CONSTRAINT `contact_trainor_foreign` FOREIGN KEY (`trainor`) REFERENCES `tb_trainors_info` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-/*Data for the table `tb_contact_nos` */
+/*Data for the table `tb_contact` */
+
+/*Table structure for table `tb_contact_types` */
+
+DROP TABLE IF EXISTS `tb_contact_types`;
+
+CREATE TABLE `tb_contact_types` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+/*Data for the table `tb_contact_types` */
 
 /*Table structure for table `tb_course_title` */
 
@@ -188,6 +201,24 @@ CREATE TABLE `tb_dependents` (
 
 /*Data for the table `tb_dependents` */
 
+/*Table structure for table `tb_designations` */
+
+DROP TABLE IF EXISTS `tb_designations`;
+
+CREATE TABLE `tb_designations` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `province` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `region` int(10) unsigned NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `designations_region_index` (`region`),
+  CONSTRAINT `designations_region_foreign` FOREIGN KEY (`region`) REFERENCES `tb_regions` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+/*Data for the table `tb_designations` */
+
 /*Table structure for table `tb_educational_background` */
 
 DROP TABLE IF EXISTS `tb_educational_background`;
@@ -212,11 +243,11 @@ CREATE TABLE `tb_educational_background` (
 
 /*Data for the table `tb_educational_background` */
 
-/*Table structure for table `tb_employment_status` */
+/*Table structure for table `tb_employment_statuses` */
 
-DROP TABLE IF EXISTS `tb_employment_status`;
+DROP TABLE IF EXISTS `tb_employment_statuses`;
 
-CREATE TABLE `tb_employment_status` (
+CREATE TABLE `tb_employment_statuses` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -224,13 +255,13 @@ CREATE TABLE `tb_employment_status` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-/*Data for the table `tb_employment_status` */
+/*Data for the table `tb_employment_statuses` */
 
-/*Table structure for table `tb_employment_type` */
+/*Table structure for table `tb_employment_types` */
 
-DROP TABLE IF EXISTS `tb_employment_type`;
+DROP TABLE IF EXISTS `tb_employment_types`;
 
-CREATE TABLE `tb_employment_type` (
+CREATE TABLE `tb_employment_types` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -238,7 +269,7 @@ CREATE TABLE `tb_employment_type` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-/*Data for the table `tb_employment_type` */
+/*Data for the table `tb_employment_types` */
 
 /*Table structure for table `tb_family_background` */
 
@@ -327,42 +358,47 @@ CREATE TABLE `tb_migrations` (
   `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=89 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*Data for the table `tb_migrations` */
 
 insert  into `tb_migrations`(`id`,`migration`,`batch`) values 
-(64,'2018_10_23_085442_create_civil_status_table',1),
-(65,'2018_10_23_085443_create_trainors_info_table',1),
-(66,'2018_10_23_085859_create_mailing_address_table',1),
-(67,'2018_10_23_090221_create_contact_nos_table',1),
-(68,'2018_10_23_090400_create_employment_type_table',1),
-(69,'2018_10_23_091231_create_employment_status_table',1),
-(70,'2018_10_23_091726_create_education_background_table',1),
-(71,'2018_10_23_092207_create_course_title_table',1),
-(72,'2018_10_23_093252_create_training_program_table',1),
-(73,'2018_10_23_093342_create_program_sector_table',1),
-(74,'2018_10_23_093457_create_client_type_table',1),
-(75,'2018_10_23_093935_create_occupation_type_table',1),
-(76,'2018_10_23_094558_create_certificate_types_table',1),
-(77,'2018_10_23_094648_create_training_base_table',1),
-(78,'2018_10_23_094738_create_category_table',1),
-(79,'2018_10_23_094819_create_proficiency_table',1),
-(80,'2018_10_23_094925_create_licenses_examination_passed_table',1),
-(81,'2018_10_23_095209_create_competency_assessment_passed_table',1),
-(82,'2018_10_23_095422_create_family_background_table',1),
-(83,'2018_10_23_095806_create_competency_assessment_to_take_table',1),
-(84,'2018_10_23_095807_create_working_experience_table',1),
-(85,'2018_10_23_095808_create_trainings_seminars_attended_table',1),
-(86,'2018_10_23_095809_create_dependents_table',1),
-(87,'2014_10_12_000000_create_users_table',2),
-(88,'2014_10_12_100000_create_password_resets_table',2);
+(1,'2018_10_22_000000_create_regions_table',1),
+(2,'2018_10_23_000000_create_user_types_table',1),
+(3,'2018_10_23_000001_create_designations_table',1),
+(4,'2018_10_23_000002_create_password_resets_table',1),
+(5,'2018_10_23_000003_create_users_table',1),
+(6,'2018_10_23_000004_create_statuses_table',1),
+(7,'2018_10_23_000005_create_contact_types_table',1),
+(8,'2018_10_23_085442_create_civil_statuses_table',1),
+(9,'2018_10_23_085443_create_trainors_info_table',1),
+(10,'2018_10_23_085859_create_mailing_address_table',1),
+(11,'2018_10_23_090221_create_contacts_table',1),
+(12,'2018_10_23_090400_create_employment_types_table',1),
+(13,'2018_10_23_091231_create_employment_statuses_table',1),
+(14,'2018_10_23_091726_create_education_background_table',1),
+(15,'2018_10_23_092207_create_course_title_table',1),
+(16,'2018_10_23_093252_create_training_program_types_table',1),
+(17,'2018_10_23_093342_create_program_sector_types_table',1),
+(18,'2018_10_23_093457_create_client_types_table',1),
+(19,'2018_10_23_093935_create_occupation_types_table',1),
+(20,'2018_10_23_094558_create_certificate_types_table',1),
+(21,'2018_10_23_094648_create_training_base_types_table',1),
+(22,'2018_10_23_094738_create_category_types_table',1),
+(23,'2018_10_23_094819_create_proficiency_types_table',1),
+(24,'2018_10_23_094925_create_licenses_examination_passed_table',1),
+(25,'2018_10_23_095209_create_competency_assessment_passed_table',1),
+(26,'2018_10_23_095422_create_family_background_table',1),
+(27,'2018_10_23_095806_create_competency_assessment_to_take_table',1),
+(28,'2018_10_23_095807_create_working_experience_table',1),
+(29,'2018_10_23_095808_create_trainings_seminars_attended_table',1),
+(30,'2018_10_23_095809_create_dependents_table',1);
 
-/*Table structure for table `tb_occupation_type` */
+/*Table structure for table `tb_occupation_types` */
 
-DROP TABLE IF EXISTS `tb_occupation_type`;
+DROP TABLE IF EXISTS `tb_occupation_types`;
 
-CREATE TABLE `tb_occupation_type` (
+CREATE TABLE `tb_occupation_types` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -370,26 +406,26 @@ CREATE TABLE `tb_occupation_type` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-/*Data for the table `tb_occupation_type` */
+/*Data for the table `tb_occupation_types` */
 
 /*Table structure for table `tb_password_resets` */
 
 DROP TABLE IF EXISTS `tb_password_resets`;
 
 CREATE TABLE `tb_password_resets` (
-  `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `token` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   KEY `password_resets_email_index` (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*Data for the table `tb_password_resets` */
 
-/*Table structure for table `tb_proficiency` */
+/*Table structure for table `tb_proficiency_types` */
 
-DROP TABLE IF EXISTS `tb_proficiency`;
+DROP TABLE IF EXISTS `tb_proficiency_types`;
 
-CREATE TABLE `tb_proficiency` (
+CREATE TABLE `tb_proficiency_types` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `code` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -398,13 +434,13 @@ CREATE TABLE `tb_proficiency` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-/*Data for the table `tb_proficiency` */
+/*Data for the table `tb_proficiency_types` */
 
-/*Table structure for table `tb_program_sector` */
+/*Table structure for table `tb_program_sector_types` */
 
-DROP TABLE IF EXISTS `tb_program_sector`;
+DROP TABLE IF EXISTS `tb_program_sector_types`;
 
-CREATE TABLE `tb_program_sector` (
+CREATE TABLE `tb_program_sector_types` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -412,13 +448,42 @@ CREATE TABLE `tb_program_sector` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-/*Data for the table `tb_program_sector` */
+/*Data for the table `tb_program_sector_types` */
 
-/*Table structure for table `tb_training_base` */
+/*Table structure for table `tb_regions` */
 
-DROP TABLE IF EXISTS `tb_training_base`;
+DROP TABLE IF EXISTS `tb_regions`;
 
-CREATE TABLE `tb_training_base` (
+CREATE TABLE `tb_regions` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `region` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+/*Data for the table `tb_regions` */
+
+/*Table structure for table `tb_statuses` */
+
+DROP TABLE IF EXISTS `tb_statuses`;
+
+CREATE TABLE `tb_statuses` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `class` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+/*Data for the table `tb_statuses` */
+
+/*Table structure for table `tb_training_base_types` */
+
+DROP TABLE IF EXISTS `tb_training_base_types`;
+
+CREATE TABLE `tb_training_base_types` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `code` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -427,13 +492,13 @@ CREATE TABLE `tb_training_base` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-/*Data for the table `tb_training_base` */
+/*Data for the table `tb_training_base_types` */
 
-/*Table structure for table `tb_training_program` */
+/*Table structure for table `tb_training_program_types` */
 
-DROP TABLE IF EXISTS `tb_training_program`;
+DROP TABLE IF EXISTS `tb_training_program_types`;
 
-CREATE TABLE `tb_training_program` (
+CREATE TABLE `tb_training_program_types` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -441,7 +506,7 @@ CREATE TABLE `tb_training_program` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-/*Data for the table `tb_training_program` */
+/*Data for the table `tb_training_program_types` */
 
 /*Table structure for table `tb_trainings_seminars_attended` */
 
@@ -468,10 +533,10 @@ CREATE TABLE `tb_trainings_seminars_attended` (
   KEY `trainings_seminars_attended_training_base_index` (`training_base`),
   KEY `trainings_seminars_attended_category_index` (`category`),
   KEY `trainings_seminars_attended_proficiency_index` (`proficiency`),
-  CONSTRAINT `trainings_seminars_attended_category_foreign` FOREIGN KEY (`category`) REFERENCES `tb_category` (`id`),
+  CONSTRAINT `trainings_seminars_attended_category_foreign` FOREIGN KEY (`category`) REFERENCES `tb_category_types` (`id`),
   CONSTRAINT `trainings_seminars_attended_certificate_types_foreign` FOREIGN KEY (`certificate_types`) REFERENCES `tb_certificate_types` (`id`),
-  CONSTRAINT `trainings_seminars_attended_proficiency_foreign` FOREIGN KEY (`proficiency`) REFERENCES `tb_proficiency` (`id`),
-  CONSTRAINT `trainings_seminars_attended_training_base_foreign` FOREIGN KEY (`training_base`) REFERENCES `tb_training_base` (`id`),
+  CONSTRAINT `trainings_seminars_attended_proficiency_foreign` FOREIGN KEY (`proficiency`) REFERENCES `tb_proficiency_types` (`id`),
+  CONSTRAINT `trainings_seminars_attended_training_base_foreign` FOREIGN KEY (`training_base`) REFERENCES `tb_training_base_types` (`id`),
   CONSTRAINT `trainings_seminars_attended_trainor_foreign` FOREIGN KEY (`trainor`) REFERENCES `tb_trainors_info` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -499,14 +564,39 @@ CREATE TABLE `tb_trainors_info` (
   `gsis_no` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `tin_no` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `distinguishing_remarks` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `designation` int(10) unsigned NOT NULL,
+  `application_status` int(10) unsigned NOT NULL,
+  `application_status_result_at` date DEFAULT NULL,
+  `application_status_result_by` int(10) unsigned DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `trainors_info_civil_status_index` (`civil_status`),
-  CONSTRAINT `trainors_info_civil_status_foreign` FOREIGN KEY (`civil_status`) REFERENCES `tb_civil_status` (`id`)
+  KEY `trainors_info_designation_index` (`designation`),
+  KEY `trainors_info_application_status_index` (`application_status`),
+  KEY `trainors_info_application_status_result_by_index` (`application_status_result_by`),
+  CONSTRAINT `trainors_info_application_status_foreign` FOREIGN KEY (`application_status`) REFERENCES `tb_statuses` (`id`),
+  CONSTRAINT `trainors_info_application_status_result_by_foreign` FOREIGN KEY (`application_status_result_by`) REFERENCES `tb_users` (`id`),
+  CONSTRAINT `trainors_info_civil_status_foreign` FOREIGN KEY (`civil_status`) REFERENCES `tb_civil_statuses` (`id`),
+  CONSTRAINT `trainors_info_designation_foreign` FOREIGN KEY (`designation`) REFERENCES `tb_designations` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*Data for the table `tb_trainors_info` */
+
+/*Table structure for table `tb_user_types` */
+
+DROP TABLE IF EXISTS `tb_user_types`;
+
+CREATE TABLE `tb_user_types` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+/*Data for the table `tb_user_types` */
 
 /*Table structure for table `tb_users` */
 
@@ -514,15 +604,21 @@ DROP TABLE IF EXISTS `tb_users`;
 
 CREATE TABLE `tb_users` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email_verified_at` timestamp NULL DEFAULT NULL,
-  `password` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `username` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `fname` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `mname` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `lname` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `user_type` int(10) unsigned NOT NULL,
+  `designation` int(10) unsigned DEFAULT NULL,
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `users_email_unique` (`email`)
+  KEY `users_user_type_index` (`user_type`),
+  KEY `users_designation_index` (`designation`),
+  CONSTRAINT `users_designation_foreign` FOREIGN KEY (`designation`) REFERENCES `tb_designations` (`id`),
+  CONSTRAINT `users_user_type_foreign` FOREIGN KEY (`user_type`) REFERENCES `tb_user_types` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*Data for the table `tb_users` */
@@ -547,7 +643,7 @@ CREATE TABLE `tb_working_experience_table` (
   PRIMARY KEY (`id`),
   KEY `working_experience_table_trainor_index` (`trainor`),
   KEY `working_experience_table_occupation_type_index` (`occupation_type`),
-  CONSTRAINT `working_experience_table_occupation_type_foreign` FOREIGN KEY (`occupation_type`) REFERENCES `tb_occupation_type` (`id`),
+  CONSTRAINT `working_experience_table_occupation_type_foreign` FOREIGN KEY (`occupation_type`) REFERENCES `tb_occupation_types` (`id`),
   CONSTRAINT `working_experience_table_trainor_foreign` FOREIGN KEY (`trainor`) REFERENCES `tb_trainors_info` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
