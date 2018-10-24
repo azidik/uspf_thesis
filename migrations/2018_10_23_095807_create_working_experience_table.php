@@ -26,7 +26,7 @@ class CreateWorkingExperienceTable extends Migration
             $table->timestamps();
 
             $table->foreign('trainor')->references('id')->on('trainors_info');
-            $table->foreign('occupation_type')->references('id')->on('occupation_type');
+            $table->foreign('occupation_type')->references('id')->on('occupation_types');
 
 
         });

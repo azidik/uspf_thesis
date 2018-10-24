@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTrainingProgramTable extends Migration
+class CreateCategoryTypesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,8 +12,9 @@ class CreateTrainingProgramTable extends Migration
      */
     public function up()
     {
-        Schema::create('training_program', function (Blueprint $table) {
+        Schema::create('category_types', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('code');
             $table->string('name');
             $table->timestamps();
         });
@@ -26,6 +27,6 @@ class CreateTrainingProgramTable extends Migration
      */
     public function down()
     {
-        Schema::drop('training_program');
+        Schema::drop('category_types');
     }
 }

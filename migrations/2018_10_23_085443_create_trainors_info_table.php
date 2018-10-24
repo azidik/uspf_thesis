@@ -30,9 +30,16 @@ class CreateTrainorsInfoTable extends Migration
             $table->string('gsis_no');
             $table->string('tin_no');
             $table->string('distinguishing_remarks');
+            $table->integer('designation')->unsigned()->index();
+            $table->integer('application_status')->unsigned()->index();
+            $table->date('application_status_result_at')->nullable();
+            $table->integer('application_status_result_by')->nullable()->unsigned()->index();
             $table->timestamps();
 
-            $table->foreign('civil_status')->references('id')->on('civil_status');
+            $table->foreign('civil_status')->references('id')->on('civil_statuses');
+            $table->foreign('designation')->references('id')->on('designations');
+            $table->foreign('application_status')->references('id')->on('statuses');
+            $table->foreign('application_status_result_by')->references('id')->on('users');
         });
     }
 
