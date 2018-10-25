@@ -33,152 +33,151 @@
 
                             	<div class="col-md-3" style="margin-top: 40px;">
                             		<h6 style="font-weight: bold;">6.7 Training Program</h6>
-                            		<div class="form-check">
+                            		<div class="form-check form-check-radio">
 	                                    <label class="form-check-label">
-	                                        <input class="form-check-input" type="checkbox" value="">
-	                                        Formal
-	                                        <span class="form-check-sign">
-	                                            <span class="check"></span>
-	                                        </span>
+                                          	<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" >
+                                          	Formal
+                                          	<span class="circle">
+                                              <span class="check"></span>
+                                          	</span>
 	                                    </label>
 	                                </div>
-                            		<div class="form-check">
+                            		<div class="form-check form-check-radio">
 	                                    <label class="form-check-label">
-	                                        <input class="form-check-input" type="checkbox" value="">
-	                                        Non-Formal
-	                                        <span class="form-check-sign">
-	                                            <span class="check"></span>
-	                                        </span>
+                                          	<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" >
+                                          	Non-Formal
+                                          	<span class="circle">
+                                              <span class="check"></span>
+                                          	</span>
 	                                    </label>
 	                                </div>
-                            		<div class="form-check">
+                            		<div class="form-check form-check-radio">
 	                                    <label class="form-check-label">
-	                                        <input class="form-check-input" type="checkbox" value="">
-	                                        Informal
-	                                        (prior learning)
-	                                        <span class="form-check-sign">
-	                                            <span class="check"></span>
-	                                        </span>
+                                          	<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" >
+                                          	InFormal (prior learning)
+                                          	<span class="circle">
+                                              <span class="check"></span>
+                                          	</span>
 	                                    </label>
 	                                </div>
                             	</div>
 
                             	<div class="col-md-3" style="margin-top: 40px;">
                             		<h6 style="font-weight: bold;">6.8 Program Sector</h6>
-                            		<div class="form-check">
-                            			<label class="form-check-label">
-                            				<input class="form-check-input" type="checkbox" value="">
-                            				Public
-                            				<span class="form-check-sign">
-                            					<span class="check"></span>
-                            				</span>
-                            			</label>
-                            		</div>
-                            		<div class="form-check">
-                            			<label class="form-check-label">
-                            				<input class="form-check-input" type="checkbox" value="">
-                            				Industry
-                            				<span class="form-check-sign">
-                            					<span class="check"></span>
-                            				</span>
-                            			</label>
-                            		</div>
-                            		<div class="form-check">
-                            			<label class="form-check-label">
-                            				<input class="form-check-input" type="checkbox" value="">
-                            				OFW
-                            				<span class="form-check-sign">
-                            					<span class="check"></span>
-                            				</span>
-                            			</label>
-                            		</div>
-                            		<div class="form-check">
-                            			<label class="form-check-label">
-                            				<input class="form-check-input" type="checkbox" value="">
-                            				Other
-                            				<span class="form-check-sign">
-                            					<span class="check"></span>
-                            				</span>
+                            		<div class="form-check form-check-radio">
+	                                    <label class="form-check-label">
+                                          	<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" >
+                                          	Public
+                                          	<span class="circle">
+                                              <span class="check"></span>
+                                          	</span>
+	                                    </label>
+	                                </div>
+                            		<div class="form-check form-check-radio">
+	                                    <label class="form-check-label">
+                                          	<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" >
+                                          	Industry
+                                          	<span class="circle">
+                                              <span class="check"></span>
+                                          	</span>
+	                                    </label>
+	                                </div>
+                            		<div class="form-check form-check-radio">
+	                                    <label class="form-check-label">
+                                          	<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" >
+                                          	OFW
+                                          	<span class="circle">
+                                              <span class="check"></span>
+                                          	</span>
+	                                    </label>
+	                                </div>
+	                                <div class="form-check form-check-radio">
+	                                    <label class="form-check-label">
+                                          	<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" >
+                                          	Others
+                                          	<span class="circle">
+                                              <span class="check"></span>
+                                          	</span>
                             				<div class="form-group" style="margin-top: 10px;">
 		                            			<label class="bmd-label-floating">Pls. Specify</label>
 		                                		<input type="" class="form-control">
 		                            		</div>
-                            			</label>
-                            		</div>
+	                                    </label>
+	                                </div>
                             	</div>
 
                             	<div class="col-md-3" style="margin-top: 40px;">
                             		<h6 style="font-weight: bold;">6.9 Client Type</h6>
-                            		<div class="form-check">
+                            		<div class="form-check form-check-radio">
 	                                    <label class="form-check-label">
-	                                        <input class="form-check-input" type="checkbox" value="">
-	                                        TESDA Grad
-	                                        <span class="form-check-sign">
-	                                            <span class="check"></span>
-	                                        </span>
+                                          	<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" >
+                                          	TESDA Grad
+                                          	<span class="circle">
+                                              <span class="check"></span>
+                                          	</span>
 	                                    </label>
 	                                </div>
-                            		<div class="form-check">
+                            		<div class="form-check form-check-radio">
 	                                    <label class="form-check-label">
-	                                        <input class="form-check-input" type="checkbox" value="">
-	                                        Person with Disability
-	                                        <span class="form-check-sign">
-	                                            <span class="check"></span>
-	                                        </span>
+                                          	<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" >
+                                          	Person with Disability
+                                          	<span class="circle">
+                                              <span class="check"></span>
+                                          	</span>
 	                                    </label>
 	                                </div>
-                            		<div class="form-check">
+                            		<div class="form-check form-check-radio">
 	                                    <label class="form-check-label">
-	                                        <input class="form-check-input" type="checkbox" value="">
-	                                        SCEP
-	                                        <span class="form-check-sign">
-	                                            <span class="check"></span>
-	                                        </span>
+                                          	<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" >
+                                          	SCEP
+                                          	<span class="circle">
+                                              <span class="check"></span>
+                                          	</span>
 	                                    </label>
 	                                </div>
-                            		<div class="form-check">
+                            		<div class="form-check form-check-radio">
 	                                    <label class="form-check-label">
-	                                        <input class="form-check-input" type="checkbox" value="">
-	                                        Non-TESDA Grad
-	                                        <span class="form-check-sign">
-	                                            <span class="check"></span>
-	                                        </span>
+                                          	<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" >
+                                          	Non-TESDA Grad
+                                          	<span class="circle">
+                                              <span class="check"></span>
+                                          	</span>
 	                                    </label>
 	                                </div>
-                            		<div class="form-check">
+                            		<div class="form-check form-check-radio">
 	                                    <label class="form-check-label">
-	                                        <input class="form-check-input" type="checkbox" value="">
-	                                        OFW
-	                                        <span class="form-check-sign">
-	                                            <span class="check"></span>
-	                                        </span>
+                                          	<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" >
+                                          	OFW
+                                          	<span class="circle">
+                                              <span class="check"></span>
+                                          	</span>
 	                                    </label>
 	                                </div>
-                            		<div class="form-check">
+                            		<div class="form-check form-check-radio">
 	                                    <label class="form-check-label">
-	                                        <input class="form-check-input" type="checkbox" value="">
-	                                        Farmers; Fishfolks
-	                                        <span class="form-check-sign">
-	                                            <span class="check"></span>
-	                                        </span>
+                                          	<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" >
+                                          	Farmers; Fishfolks
+                                          	<span class="circle">
+                                              <span class="check"></span>
+                                          	</span>
 	                                    </label>
 	                                </div>
-                            		<div class="form-check">
+                            		<div class="form-check form-check-radio">
 	                                    <label class="form-check-label">
-	                                        <input class="form-check-input" type="checkbox" value="">
-	                                        OSY
-	                                        <span class="form-check-sign">
-	                                            <span class="check"></span>
-	                                        </span>
+                                          	<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" >
+                                          	OSY
+                                          	<span class="circle">
+                                              <span class="check"></span>
+                                          	</span>
 	                                    </label>
 	                                </div>
-                            		<div class="form-check">
+	                                <div class="form-check form-check-radio">
 	                                    <label class="form-check-label">
-	                                        <input class="form-check-input" type="checkbox" value="">
-	                                        Others
-	                                        <span class="form-check-sign">
-	                                            <span class="check"></span>
-	                                        </span>
+                                          	<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" >
+                                          	Others
+                                          	<span class="circle">
+                                              <span class="check"></span>
+                                          	</span>
 	                                        <div class="form-group" style="margin-top: 10px;">
 		                            			<label class="bmd-label-floating">Pls. Specify</label>
 		                                		<input type="" class="form-control">

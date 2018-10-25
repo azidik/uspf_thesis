@@ -95,20 +95,20 @@
                           <div class="row">
                             <div class="col-md-2">
                               <h6 style="font-weight: bold;">2.3 Sex</h6>
-                                <div class="form-check">
+                                <div class="form-check form-check-radio">
                                     <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" value="">
+                                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" >
                                         Male
-                                        <span class="form-check-sign">
+                                        <span class="circle">
                                             <span class="check"></span>
                                         </span>
                                     </label>
                                 </div>
-                                <div class="form-check">
+                                <div class="form-check form-check-radio">
                                     <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" value="">
+                                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" >
                                         Female
-                                        <span class="form-check-sign">
+                                        <span class="circle">
                                             <span class="check"></span>
                                         </span>
                                     </label>
@@ -116,38 +116,38 @@
                             </div>
                             <div class="col-md-3">
                               <h6 style="font-weight: bold;">2.4 Civil Status</h6>
-                                <div class="form-check">
+                                <div class="form-check form-check-radio">
                                     <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" value="">
+                                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" >
                                         Single
-                                        <span class="form-check-sign">
+                                        <span class="circle">
                                             <span class="check"></span>
                                         </span>
                                     </label>
                                 </div>
-                                <div class="form-check">
+                                <div class="form-check form-check-radio">
                                     <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" value="">
+                                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" >
                                         Married
-                                        <span class="form-check-sign">
+                                        <span class="circle">
                                             <span class="check"></span>
                                         </span>
                                     </label>
                                 </div>
-                                <div class="form-check">
+                                <div class="form-check form-check-radio">
                                     <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" value="">
+                                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" >
                                         Widow/er
-                                        <span class="form-check-sign">
+                                        <span class="circle">
                                             <span class="check"></span>
                                         </span>
                                     </label>
                                 </div>
-                                <div class="form-check">
+                                <div class="form-check form-check-radio">
                                     <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" value="">
+                                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" >
                                         Separated
-                                        <span class="form-check-sign">
+                                        <span class="circle">
                                             <span class="check"></span>
                                         </span>
                                     </label>
@@ -197,38 +197,38 @@
                           <div class="row">
                             <div class="col-md-4">
                               <h6 style="font-weight: bold;">2.6 Employment Type</h6>
-                                <div class="form-check">
+                                <div class="form-check form-check-radio">
                                     <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" value="">
+                                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" >
                                         Employed
-                                        <span class="form-check-sign">
+                                        <span class="circle">
                                             <span class="check"></span>
                                         </span>
                                     </label>
                                 </div>
-                                <div class="form-check">
+                                <div class="form-check form-check-radio">
                                     <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" value="">
+                                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" >
                                         Self-employed
-                                        <span class="form-check-sign">
+                                        <span class="circle">
                                             <span class="check"></span>
                                         </span>
                                     </label>
                                 </div>
-                                <div class="form-check">
+                                <div class="form-check form-check-radio">
                                     <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" value="">
+                                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" >
                                         Unemployed
-                                        <span class="form-check-sign">
+                                        <span class="circle">
                                             <span class="check"></span>
                                         </span>
                                     </label>
                                 </div>
-                                <div class="form-check">
+                                <div class="form-check form-check-radio">
                                     <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" value="">
+                                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" >
                                         Other than above
-                                        <span class="form-check-sign">
+                                        <span class="circle">
                                             <span class="check"></span>
                                         </span>
                                         <div class="form-group" style="margin-top: 10px;">
@@ -242,53 +242,44 @@
                               <h6 style="font-weight: bold;">2.6 Employment Status</h6>
                               <div class="row">
                                 <div class="col-md-6">
-                                  <div class="form-check">
+                                  <div class="form-check form-check-radio">
                                       <label class="form-check-label">
-                                          <input class="form-check-input" type="checkbox" value="">
+                                          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" >
                                           Casual
-                                          <span class="form-check-sign">
+                                          <span class="circle">
                                               <span class="check"></span>
                                           </span>
                                       </label>
                                   </div>
-                                  <div class="form-check">
+                                  <div class="form-check form-check-radio">
                                       <label class="form-check-label">
-                                          <input class="form-check-input" type="checkbox" value="">
+                                          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" >
                                           Contractual
-                                          <span class="form-check-sign">
+                                          <span class="circle">
                                               <span class="check"></span>
                                           </span>
                                       </label>
                                   </div>
-                                  <div class="form-check">
+                                  <div class="form-check form-check-radio">
                                       <label class="form-check-label">
-                                          <input class="form-check-input" type="checkbox" value="">
+                                          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" >
                                           Job Order
-                                          <span class="form-check-sign">
+                                          <span class="circle">
                                               <span class="check"></span>
                                           </span>
                                       </label>
                                   </div>
-                                  <div class="form-check">
+                                  <div class="form-check form-check-radio">
                                       <label class="form-check-label">
-                                          <input class="form-check-input" type="checkbox" value="">
+                                          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" >
                                           Temporary
-                                          <span class="form-check-sign">
-                                              <span class="check"></span>
-                                          </span>
-                                      </label>
-                                  </div>
-                                    <h6>if Student</h6>
-                                  <div class="form-check">
-                                      <label class="form-check-label">
-                                          <input class="form-check-input" type="checkbox" value="">
-                                          Trainee / OJT
-                                          <span class="form-check-sign">
+                                          <span class="circle">
                                               <span class="check"></span>
                                           </span>
                                       </label>
                                   </div>
                                 </div>
+
                                 <div class="col-md-6">
                                   <div class="form-check form-check-radio">
                                       <label class="form-check-label">
@@ -309,15 +300,25 @@
                                       </label>
                                   </div>
                                   <div class="form-check form-check-radio">
-                                    <label class="form-check-label">
-                                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" >
-                                        Permanent
-                                        <span class="circle">
-                                            <span class="check"></span>
-                                        </span>
-                                    </label>
+                                      <label class="form-check-label">
+                                          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" >
+                                          Permanent
+                                          <span class="circle">
+                                              <span class="check"></span>
+                                          </span>
+                                      </label>
+                                  </div>
                                 </div>
-                                </div>
+                              </div>
+                                <h6>if Student</h6>
+                              <div class="form-check form-check-radio">
+                                  <label class="form-check-label">
+                                      <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" >
+                                      Trainee / OJT
+                                      <span class="circle">
+                                          <span class="check"></span>
+                                      </span>
+                                  </label>
                               </div>
                             </div>
                           </div>

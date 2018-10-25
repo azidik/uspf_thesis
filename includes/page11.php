@@ -111,9 +111,9 @@
                                     <col width="20%">
                                         <thead>
                                            <tr>
-                                               <th><h6 style="font-weight: bold;">11.17 Dependents</h6></th>
-                                               <th><h6 style="font-weight: bold;">11.18 Age</h6></th>
-                                               <th><h6 style="font-weight: bold;">Action</h6></th>
+                                               <th><h6>11.17 Dependents</h6></th>
+                                               <th><h6>11.18 Age</h6></th>
+                                               <th><h6>Action</h6></th>
                                            </tr>
                                         </thead>
                                         <tbody id='body'>
@@ -125,7 +125,7 @@
                                                     <input class="form-control" type="number" name="age0" placeholder="Age">
                                                 </td>
                                                 <td>
-                                                    <button type="button" class="btn btn-danger btn-sm btn-delete">
+                                                    <button type="button" class="btn btn-danger btn-sm btn-delete pull-right">
                                                         <i class="material-icons">delete</i>
                                                             Delete row
                                                     </button>

@@ -4,13 +4,6 @@
 
                             <br>
                             <hr>
-                            <h6 style="font-weight: bold;">COLUMN NAME</h6>
-                            <h6 style="font-weight: bold;">10.1 IS 	- Industry Sector</h6>
-							<h6 style="font-weight: bold;">10.2 TA 	- Trade Area</h6>
-							<h6 style="font-weight: bold;">10.3 Occ - Occupation</h6>
-							<h6 style="font-weight: bold;">10.4 CL 	- Classification Level</h6>
-							<h6 style="font-weight: bold;">10.5 Com - Competency</h6>
-							<h6 style="font-weight: bold;">10.6 SD  - Specialization Description</h6>
 
                             <button id="cap-btn-add" type="button" class="btn btn-primary pull-right">
                                 <i class="material-icons">add_circle_outline</i>
@@ -20,37 +13,37 @@
                                 <table id="cap-table" style="" class="table table-hover">
                                         <thead>
                                            <tr>
-                                               <th style="100px !important;"><h6 style="font-weight: bold;">10.1 Industry Sector</h6></th>
-                                               <th style="100px !important;"><h6 style="font-weight: bold;">10.2 Trade Area</h6></th>
-                                               <th style="100px !important;"><h6 style="font-weight: bold;">10.3 Occupation</h6></th>
-                                               <th style="100px !important;"><h6 style="font-weight: bold;">10.4 Classification Level</h6></th>
-                                               <th style="100px !important;"><h6 style="font-weight: bold;">10.5 Competency</h6></th>
-                                               <th style="100px !important;"><h6 style="font-weight: bold;">10.6 Specialization Description</h6></th>
-                                               <th style="100px !important;"><h6 style="font-weight: bold;">Action</h6></th>
+                                               <th><h6>10.1<br> Industry Sector</h6></th>
+                                               <th><h6>10.2<br> Trade Area</h6></th>
+                                               <th><h6>10.3<br> Occupation</h6></th>
+                                               <th><h6>10.4<br> Classification Level</h6></th>
+                                               <th><h6>10.5<br> Competency</h6></th>
+                                               <th><h6>10.6<br> Specialization Description</h6></th>
+                                               <th><h6>Action</h6></th>
                                            </tr>
                                         </thead>
                                         <tbody id="cap-body">
                                             <tr id="row0">
                                                 <td>
-                                                    <input class="form-control" type="text" name="is0">
+                                                    <input class="form-control" name="is0" type="text">
                                                 </td>
                                                 <td>
-                                                    <input class="form-control" type="text" name="ta0">
+                                                    <input class="form-control" name="ta0" type="text">
                                                 </td>
                                                 <td>
-                                                    <input class="form-control" type="text" name="occ0">
+                                                    <input class="form-control" name="occ0" type="text">
                                                 </td>
                                                 <td>
-                                                    <input class="form-control" type="text" name="class0">
+                                                    <input class="form-control" name="class0" type="text">
                                                 </td>
                                                 <td>
-                                                    <input class="form-control" type="text" name="com0">
+                                                    <input class="form-control" name="com0" type="text">
                                                 </td>
                                                 <td>
-                                                    <input class="form-control" type="text" name="sd0">
+                                                    <input class="form-control" name="sd0" type="text">
                                                 </td>
                                                 <td>
-                                                    <button type="button" class="btn btn-danger btn-sm btn-delete">
+                                                    <button type="button" class="btn btn-danger btn-sm btn-delete pull-right">
                                                         <i class="material-icons">delete</i>
                                                             Delete row
                                                     </button>
@@ -61,9 +54,3 @@
                                 </table>
                             </div>
                         </div>
-
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>

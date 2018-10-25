@@ -54,10 +54,24 @@
   z-index: 2;
 }
 
-#map {
-  z-index: 2;
-  height: calc(100vh - 70px);
-  margin-top: 70px;
+table {
+  table-layout: fixed;
+  width: 100%;
+}
+
+td, th {
+  vertical-align: top;
+  width: 200px;
+  /*border-right: 1px solid black;*/
+}
+
+th{
+  width: 200px;
+  text-align: center;
+}
+
+h6{
+  font-weight: bold;
 }
 
 
